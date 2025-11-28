@@ -479,3 +479,46 @@ footer {
   from { opacity: 0; transform: translateY(3px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Payment modal */
+.payment-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.payment-modal.hidden {
+  display: none;
+}
+
+.payment-content {
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  width: 320px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.payment-content h3 {
+  margin-top: 0;
+}
+
+.payment-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Booking history cards reuse result-card style but can tweak */
+#bookingHistory .result-card {
+  font-size: 13px;
+  padding: 8px 10px;
+}
+#bookingHistory small {
+  color: #6b7280;
+}

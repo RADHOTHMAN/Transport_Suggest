@@ -114,3 +114,66 @@ def compare_websites():
         })
 
     return jsonify({"count": len(results), "matches": results})
+
+# ------- BOOKING: LOG A BOOKING -------
+
+@bp.route("/book", methods=["POST"])
+def book():
+    """
+    Log a booking into user_history based on a chosen transport id.
+    """
+    data = request.get_json(force=True)
+    transport_id = data.get("id")
+
+    if not transport_id:
+        return jsonify({"status": "error", "error": "Missing id"}), 400
+
+    db = get_db()
+    row = db.execute(
+        "SELECT origin, destination, mode FROM transports WHERE id=?",
+        (transport_id,),
+    ).fetchone()
+
+    if not row:
+        return jsonify({"status": "error", "error": "Transport not found"}), 404
+
+    # priority='booking' to differentiate from search history if you ever log that
+    db.execute(
+        "INSERT INTO user_history(origin, destination, mode, priority) VALUES (?, ?, ?, ?)",
+        (row["origin"], row["destination"], row["mode"], "booking"),
+    )
+    db.commit()
+
+    return jsonify({"status": "ok"})
+
+
+# ------- BOOKING HISTORY -------
+
+@bp.route("/booking_history", methods=["GET"])
+def booking_history():
+    """
+    Return last few bookings from user_history.
+    """
+    db = get_db()
+    rows = db.execute(
+        """
+        SELECT origin, destination, mode, timestamp
+        FROM user_history
+        WHERE priority='booking'
+        ORDER BY timestamp DESC
+        LIMIT 20
+        """
+    ).fetchall()
+
+    history = [
+        {
+            "origin": r["origin"],
+            "destination": r["destination"],
+            "mode": r["mode"],
+            "timestamp": r["timestamp"],
+        }
+        for r in rows
+    ]
+
+    return jsonify({"count": len(history), "history": history})
+

@@ -154,9 +154,64 @@ async function compareWebsites(){
   }
 }
 
+let currentBooking = null;  // add near fakeBook / top-level
+
 function fakeBook(site, transportId, price){
-  alert(`(Demo only)\nBooking ${transportId} via ${site} for ₹${price}`);
+  // store context for payment
+  currentBooking = { site, transportId, price };
+  openPaymentModal();
 }
+
+function openPaymentModal(){
+  const modal = document.getElementById("paymentModal");
+  const summary = document.getElementById("paymentSummary");
+
+  if (currentBooking && summary) {
+    summary.innerHTML =
+      `Booking <b>${currentBooking.transportId}</b> via <b>${currentBooking.site}</b> for <b>₹${currentBooking.price}</b>.`;
+  }
+  if (modal) {
+    modal.classList.remove("hidden");
+  }
+}
+
+function closePaymentModal(){
+  const modal = document.getElementById("paymentModal");
+  if (modal) {
+    modal.classList.add("hidden");
+  }
+}
+
+async function confirmPayment(){
+  const modal = document.getElementById("paymentModal");
+  if (modal) modal.classList.add("hidden");
+  if (!currentBooking) return;
+
+  const method = document.getElementById("paymentMethod").value || "selected method";
+
+  // Simulate payment delay
+  appendChat("bot", `💳 Processing your ${method} payment of ₹${currentBooking.price}...`);
+  await new Promise(r => setTimeout(r, 1200));
+
+  // Log booking in backend
+  try {
+    await fetch("/book", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: currentBooking.transportId })
+    });
+  } catch (err) {
+    console.error("Error logging booking:", err);
+  }
+
+  appendChat("bot", `🎟️ Payment successful! Your booking for <b>${currentBooking.transportId}</b> is confirmed.`);
+  alert(`Payment Successful! Ticket booked for ${currentBooking.transportId}`);
+
+  currentBooking = null;
+  // Refresh booking history panel if visible
+  loadBookingHistory();
+}
+
 
 // ---------------- ADMIN FUNCTIONS ----------------
 
@@ -354,3 +409,34 @@ window.addEventListener("load", () => {
     cwMode.addEventListener("change", updateCompareLocations);
   }
 });
+
+async function loadBookingHistory(){
+  const box = document.getElementById("bookingHistory");
+  if (!box) return;
+
+  box.innerHTML = "<p>⏳ Loading your bookings...</p>";
+
+  try {
+    const res = await fetch("/booking_history");
+    const data = await res.json();
+
+    if (!data.count) {
+      box.innerHTML = "<p>No bookings made yet.</p>";
+      return;
+    }
+
+    box.innerHTML = "";
+    data.history.forEach(h => {
+      const div = document.createElement("div");
+      div.className = "result-card";
+      div.innerHTML = `
+        <p><b>${h.origin} → ${h.destination}</b> (${h.mode.toUpperCase()})</p>
+        <small>${h.timestamp}</small>
+      `;
+      box.appendChild(div);
+    });
+  } catch (err) {
+    console.error("History error:", err);
+    box.innerHTML = "<p>Could not load booking history.</p>";
+  }
+}

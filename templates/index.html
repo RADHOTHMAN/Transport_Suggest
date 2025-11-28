@@ -35,6 +35,12 @@
         </div>
         
         <div id="searchResult" class="cards-container"></div>
+
+        <!-- 🔥 ADDED NEW SECTION HERE -->
+        <div style="margin-top:10px;">
+          <button onclick="loadBookingHistory()">View Your Booking History</button>
+        </div>
+        <div id="bookingHistory" class="cards-container"></div>
       </div>
 
       <!-- Price Comparison Section -->
@@ -42,19 +48,19 @@
         <h2>Compare Website Prices (Uber / Rapido / RedBus etc.)</h2>
         <p>Enter transport mode + cities and compare fares from platforms.</p>
         <div class="row">
-  <select id="cw_origin"></select>
-  <select id="cw_destination"></select>
+          <select id="cw_origin"></select>
+          <select id="cw_destination"></select>
 
-  <select id="cw_mode" onchange="updateCompareLocations()">
-    <option value="bike">Bike Taxi</option>
-    <option value="taxi">Cab / Taxi</option>
-    <option value="bus">Bus</option>
-    <option value="train">Train</option>
-    <option value="flight">Flight</option>
-  </select>
+          <select id="cw_mode" onchange="updateCompareLocations()">
+            <option value="bike">Bike Taxi</option>
+            <option value="taxi">Cab / Taxi</option>
+            <option value="bus">Bus</option>
+            <option value="train">Train</option>
+            <option value="flight">Flight</option>
+          </select>
 
-  <button onclick="compareWebsites()">Compare</button>
-</div>
+          <button onclick="compareWebsites()">Compare</button>
+        </div>
 
         <div id="compareResult"></div>
       </div>
@@ -84,6 +90,27 @@
   <footer>
     <center><small>⚠️ Simulation only — no real booking or live API.</small></center>
   </footer>
+
+  <!-- 🔥 PAYMENT MODAL ADDED -->
+  <div id="paymentModal" class="payment-modal hidden">
+    <div class="payment-content">
+      <h3>Payment</h3>
+      <p id="paymentSummary"></p>
+
+      <label for="paymentMethod">Payment method:</label>
+      <select id="paymentMethod">
+        <option value="UPI">UPI</option>
+        <option value="Card">Debit / Credit Card</option>
+        <option value="NetBanking">Net Banking</option>
+        <option value="Wallet">Wallet</option>
+      </select>
+
+      <div class="payment-actions">
+        <button onclick="confirmPayment()">Pay</button>
+        <button onclick="closePaymentModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
 
   <script src="/static/script.js"></script>
 </body>
