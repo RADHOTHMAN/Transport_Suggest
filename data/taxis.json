@@ -58,5 +58,125 @@
     "price": 250,
     "seats_available": 4,
     "rating": 4.0
-  }
+  },
+  {
+  "id": "taxi_6",
+  "name": "UberGo",
+  "origin": "Hyderabad",
+  "destination": "Charminar",
+  "departure": "ASAP",
+  "arrival": "30 mins",
+  "duration_mins": 30,
+  "price": 280,
+  "seats_available": 4,
+  "rating": 4.4
+},
+{
+  "id": "taxi_7",
+  "name": "Ola Prime Sedan",
+  "origin": "Pune",
+  "destination": "Hinjewadi",
+  "departure": "ASAP",
+  "arrival": "40 mins",
+  "duration_mins": 40,
+  "price": 490,
+  "seats_available": 4,
+  "rating": 4.5
+},
+{
+  "id": "taxi_8",
+  "name": "Uber XL",
+  "origin": "Delhi",
+  "destination": "IGI Airport",
+  "departure": "ASAP",
+  "arrival": "28 mins",
+  "duration_mins": 28,
+  "price": 650,
+  "seats_available": 6,
+  "rating": 4.6
+},
+{
+  "id": "taxi_9",
+  "name": "Ola Mini",
+  "origin": "Jaipur",
+  "destination": "Amer Fort",
+  "departure": "ASAP",
+  "arrival": "35 mins",
+  "duration_mins": 35,
+  "price": 320,
+  "seats_available": 4,
+  "rating": 4.1
+},
+{
+  "id": "taxi_10",
+  "name": "UberGo",
+  "origin": "Kolkata",
+  "destination": "Howrah Station",
+  "departure": "ASAP",
+  "arrival": "20 mins",
+  "duration_mins": 20,
+  "price": 210,
+  "seats_available": 4,
+  "rating": 4.2
+},
+{
+  "id": "taxi_11",
+  "name": "Mega Cab",
+  "origin": "Chandigarh",
+  "destination": "Mohali",
+  "departure": "ASAP",
+  "arrival": "30 mins",
+  "duration_mins": 30,
+  "price": 270,
+  "seats_available": 4,
+  "rating": 4.0
+},
+{
+  "id": "taxi_12",
+  "name": "Uber Premier",
+  "origin": "Bengaluru",
+  "destination": "Airport",
+  "departure": "ASAP",
+  "arrival": "55 mins",
+  "duration_mins": 55,
+  "price": 850,
+  "seats_available": 4,
+  "rating": 4.6
+},
+{
+  "id": "taxi_13",
+  "name": "Ola Prime",
+  "origin": "Lucknow",
+  "destination": "Hazratganj",
+  "departure": "ASAP",
+  "arrival": "25 mins",
+  "duration_mins": 25,
+  "price": 230,
+  "seats_available": 4,
+  "rating": 4.1
+},
+{
+  "id": "taxi_14",
+  "name": "UberGo",
+  "origin": "Ahmedabad",
+  "destination": "Gandhinagar",
+  "departure": "ASAP",
+  "arrival": "45 mins",
+  "duration_mins": 45,
+  "price": 400,
+  "seats_available": 4,
+  "rating": 4.3
+},
+{
+  "id": "taxi_15",
+  "name": "Ola Mini",
+  "origin": "Coimbatore",
+  "destination": "Peelamedu",
+  "departure": "ASAP",
+  "arrival": "22 mins",
+  "duration_mins": 22,
+  "price": 190,
+  "seats_available": 4,
+  "rating": 4.0
+}
 ]

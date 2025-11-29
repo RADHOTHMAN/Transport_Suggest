@@ -59,4 +59,89 @@
     "seats_available": 1,
     "rating": 4.2
   }
+  ,
+{
+  "id": "bike_6",
+  "name": "Rapido Bike",
+  "origin": "Pune",
+  "destination": "Hinjewadi",
+  "departure": "ASAP",
+  "arrival": "30 mins",
+  "duration_mins": 30,
+  "price": 130,
+  "seats_available": 1,
+  "rating": 4.5
+},
+{
+  "id": "bike_7",
+  "name": "Uber Moto",
+  "origin": "Mumbai",
+  "destination": "Andheri East",
+  "departure": "ASAP",
+  "arrival": "35 mins",
+  "duration_mins": 35,
+  "price": 160,
+  "seats_available": 1,
+  "rating": 4.4
+},
+{
+  "id": "bike_8",
+  "name": "Ola Bike",
+  "origin": "Kolkata",
+  "destination": "Salt Lake",
+  "departure": "ASAP",
+  "arrival": "20 mins",
+  "duration_mins": 20,
+  "price": 95,
+  "seats_available": 1,
+  "rating": 4.3
+},
+{
+  "id": "bike_9",
+  "name": "Rapido Bike",
+  "origin": "Ahmedabad",
+  "destination": "Gandhinagar",
+  "departure": "ASAP",
+  "arrival": "30 mins",
+  "duration_mins": 30,
+  "price": 140,
+  "seats_available": 1,
+  "rating": 4.6
+},
+{
+  "id": "bike_10",
+  "name": "Uber Moto",
+  "origin": "Jaipur",
+  "destination": "Malviya Nagar",
+  "departure": "ASAP",
+  "arrival": "22 mins",
+  "duration_mins": 22,
+  "price": 105,
+  "seats_available": 1,
+  "rating": 4.4
+},
+{
+  "id": "bike_11",
+  "name": "Ola Bike",
+  "origin": "Coimbatore",
+  "destination": "Peelamedu",
+  "departure": "ASAP",
+  "arrival": "18 mins",
+  "duration_mins": 18,
+  "price": 90,
+  "seats_available": 1,
+  "rating": 4.2
+},
+{
+  "id": "bike_12",
+  "name": "Rapido Bike",
+  "origin": "Visakhapatnam",
+  "destination": "Rushikonda",
+  "departure": "ASAP",
+  "arrival": "25 mins",
+  "duration_mins": 25,
+  "price": 110,
+  "seats_available": 1,
+  "rating": 4.5
+}
 ]

@@ -58,5 +58,66 @@
     "price": 2800,
     "seats_available": 18,
     "rating": 4.0
-  }
+  },
+  {
+    "id": "flight_6",
+ "name": "IndiGo 6E-202",
+ "origin": "Hyderabad",
+ "destination": "Bengaluru",
+ "departure": "10:15",
+ "arrival": "11:20",
+ "duration_mins": 65,
+ "price": 3200,
+ "seats_available": 28,
+ "rating": 4.2
+ },
+{
+"id": "flight_7",
+ "name": "Vistara UK-441",
+ "origin": "Mumbai",
+ "destination": "Delhi",
+"departure": "19:00",
+ "arrival": "21:05",
+ "duration_mins": 125,
+ "price": 5800,
+"seats_available": 12,
+ "rating": 4.7
+},
+{
+ "id": "flight_8",
+ "name": "AirAsia I5-230",
+ "origin": "Chennai",
+ "destination": "Bengaluru",
+ "departure": "08:45",
+ "arrival": "09:50",
+ "duration_mins": 65,
+ "price": 2600,
+ "seats_available": 30,
+ "rating": 4.1
+ },
+  {
+ "id": "flight_9",
+ "name": "Air India AI-560",
+ "origin": "Delhi",
+"destination": "Kolkata",
+ "departure": "16:10",
+ "arrival": "18:25",
+"duration_mins": 135,
+ "price": 5400,
+ "seats_available": 22,
+ "rating": 4.4
+},
+ {
+ "id": "flight_10",
+ "name": "IndiGo 6E-789",
+ "origin": "Pune",
+ "destination": "Hyderabad",
+"departure": "12:30",
+ "arrival": "13:40",
+ "duration_mins": 70,
+ "price": 2900,
+ "seats_available": 17,
+ "rating": 4.3
+}
+
 ]

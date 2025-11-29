@@ -58,5 +58,67 @@
     "price": 200,
     "seats_available": 80,
     "rating": 4.0
+  },
+  {
+    "id": "train_6",
+    "name": "Howrah Mail 12839",
+    "origin": "Mumbai",
+    "destination": "Kolkata",
+    "departure": "21:15",
+    "arrival": "06:10",
+    "duration_mins": 1745,
+    "price": 2100,
+    "seats_available": 95,
+    "rating": 4.1
+  },
+  {
+    "id": "train_7",
+    "name": "Rajdhani Express 12301",
+    "origin": "Delhi",
+    "destination": "Kolkata",
+    "departure": "16:55",
+    "arrival": "10:55",
+    "duration_mins": 1080,
+    "price": 2400,
+    "seats_available": 60,
+    "rating": 4.8
+  },
+  {
+    "id": "train_8",
+    "name": "Tejas Express 22671",
+    "origin": "Chennai",
+    "destination": "Madurai",
+    "departure": "06:00",
+    "arrival": "11:00",
+    "duration_mins": 300,
+    "price": 950,
+    "seats_available": 50,
+    "rating": 4.6
+  },
+  {
+    "id": "train_9",
+    "name": "Double Decker 22625",
+    "origin": "Bengaluru",
+    "destination": "Chennai",
+    "departure": "07:25",
+    "arrival": "12:30",
+    "duration_mins": 305,
+    "price": 650,
+    "seats_available": 120,
+    "rating": 4.3
+  },
+  {
+    "id": "train_10",
+    "name": "Kacheguda Express 12785",
+    "origin": "Hyderabad",
+    "destination": "Bengaluru",
+    "departure": "21:05",
+    "arrival": "07:10",
+    "duration_mins": 605,
+    "price": 750,
+    "seats_available": 85,
+    "rating": 4.2
   }
+
+
 ]

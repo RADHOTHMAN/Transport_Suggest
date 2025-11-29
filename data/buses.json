@@ -59,4 +59,67 @@
     "seats_available": 30,
     "rating": 4.0
   }
+  ,
+  {
+    "id": "bus_6",
+    "name": "TNSTC Express",
+    "origin": "Chennai",
+    "destination": "Coimbatore",
+    "departure": "22:30",
+    "arrival": "06:30",
+    "duration_mins": 480,
+    "price": 750,
+    "seats_available": 18,
+    "rating": 4.0
+  },
+  {
+    "id": "bus_7",
+    "name": "Parveen Travels",
+    "origin": "Chennai",
+    "destination": "Bengaluru",
+    "departure": "21:45",
+    "arrival": "04:30",
+    "duration_mins": 405,
+    "price": 900,
+    "seats_available": 15,
+    "rating": 4.3
+  },
+  {
+    "id": "bus_8",
+    "name": "TSRTC Deluxe",
+    "origin": "Hyderabad",
+    "destination": "Vijayawada",
+    "departure": "16:00",
+    "arrival": "20:30",
+    "duration_mins": 270,
+    "price": 500,
+    "seats_available": 40,
+    "rating": 4.1
+  },
+  {
+    "id": "bus_9",
+    "name": "APSRTC Express",
+    "origin": "Vijayawada",
+    "destination": "Visakhapatnam",
+    "departure": "18:30",
+    "arrival": "23:50",
+    "duration_mins": 320,
+    "price": 620,
+    "seats_available": 22,
+    "rating": 3.9
+  },
+  {
+    "id": "bus_10",
+    "name": "KPN Travels",
+    "origin": "Coimbatore",
+    "destination": "Madurai",
+    "departure": "19:30",
+    "arrival": "23:00",
+    "duration_mins": 210,
+    "price": 470,
+    "seats_available": 12,
+    "rating": 4.2
+  }
 ]
+
+
