@@ -234,7 +234,8 @@ function confirmTravelerDetails(){
 
 
 // center overlay for processing steps (instead of chatbot)
-function showProcessingOverlay(price, name, method){
+// ---------------- UPDATED UPI SCANNER PAYMENT FLOW ----------------
+function showProcessingOverlay(price, name, method) {
   const overlay = document.getElementById("processOverlay");
   const content = document.getElementById("processContent");
   if (!overlay || !content) return;
@@ -242,9 +243,34 @@ function showProcessingOverlay(price, name, method){
   overlay.classList.remove("hidden");
   content.innerHTML = "";
 
-  const p = Number(price).toFixed(2);
+  const amount = Number(price).toFixed(2);
 
-  content.innerHTML += `<p>📱 Initializing ${method} payment of ₹${p}...</p>`;
+  // 💳 If user chooses UPI → show QR scanner
+  if (method === "UPI") {
+    content.innerHTML = `
+      <p style="font-size:16px; font-weight:500; text-align:center;">
+        Scan the QR Code to complete UPI Payment
+      </p>
+
+      <img src="/static/scanner.jpg"
+           style="
+             width:260px;
+             height:260px;
+             border-radius:12px;
+             margin:15px auto;
+             display:block;
+             box-shadow:0px 4px 10px rgba(0,0,0,0.2);
+           " />
+
+      <p style="text-align:center; margin-top:10px; color:#008000; font-size:14px;">
+        Waiting for payment confirmation…
+      </p>
+    `;
+    return;
+  }
+
+  // 🏦 Other methods → Keep original behaviour unchanged
+  content.innerHTML += `<p>📱 Initializing ${method} payment of ₹${amount}...</p>`;
   setTimeout(() => {
     content.innerHTML += `<p>🔐 Securely verifying transaction with your bank...</p>`;
   }, 700);
@@ -252,7 +278,6 @@ function showProcessingOverlay(price, name, method){
     content.innerHTML += `<p>✅ Payment successful! Your booking for <b>${name}</b> is confirmed.</p>`;
   }, 1400);
 }
-
 function closeProcessingOverlay(){
   const overlay = document.getElementById("processOverlay");
   if (overlay) overlay.classList.add("hidden");
